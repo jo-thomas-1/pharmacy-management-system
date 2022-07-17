@@ -1,13 +1,14 @@
-// function to handle logout
-function logout()
+// check if user has logged in to page
+console.log("checking access");
+if(localStorage.getItem("logged_in") == "false")
 {
-	localStorage.clear();
+	console.log("user has not logged in");
 	$(location).attr("href", "index.html");
 }
 
-// check if user has logged in to page
-if(localStorage.getItem("logged_in") != "true")
+// function to handle logout
+function logout()
 {
-	console.log("user has not logged in");
+	localStorage.setItem("logged_in", "false");
 	$(location).attr("href", "index.html");
 }
