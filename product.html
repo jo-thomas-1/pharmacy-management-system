@@ -46,9 +46,53 @@
 		</nav>
 
 		<!-- body content -->
-		<div class="container space-around">
-			<div id="login_box" class="column">
+		<div class="container">
+			<div class="column full-width">
 				<h1>Products</h1>
+				<div class="row">
+					<div class="column filter_section">
+						<h3 class="m-0">Filters</h3>
+						<p class="data_count">Count: <span id="order_count">11</span></p>
+						<label class="filter-item">
+							<input type="checkbox" name="expired" value="expired" checked>Expired
+						</label>
+						<label class="filter-item">
+							<input type="checkbox" name="lowstock" value="lowstock" checked>Low Stock
+						</label>
+					</div>
+					<div class="column data_section">
+						<table>
+							<thead>
+								<tr>
+									<th>ID</th>
+									<th>Product Name</th>
+									<th>Product Brand</th>
+									<th>Expiry Date</th>
+									<th>Unit Price</th>
+									<th>Stock</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr id="56104-020">
+									<td class="silent-text">56104-020</td>
+									<td>Miconazole Nitrate</td>
+									<td class="silent-text">Premier Brands of America Inc.</td>
+									<td>14 Aug, 2012</td>
+									<td class="silent-text">$993.01</td>
+									<td class="silent-text">725</td>
+								</tr>
+								<tr id="56104-020">
+									<td class="silent-text">56104-020</td>
+									<td>Miconazole Nitrate</td>
+									<td class="silent-text">Premier Brands of America Inc.</td>
+									<td>14 Aug, 2012</td>
+									<td class="silent-text">$993.01</td>
+									<td class="silent-text">725</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
 			</div>
 		</div>
 

@@ -133,3 +133,31 @@ tbody td {
 .silent-text {
 	color: #8c8c8c;
 }
+
+#search_box_form {
+	width: 70%;
+	margin-bottom: 5vh;
+}
+
+.search_box {
+	width: 100%;
+	padding: 12px 24px;
+	font-size: 15px;
+	border: 0;
+	border-bottom: 2px solid #8c8c8c;
+	margin: 0 36px 0 0;
+	outline: none;
+}
+
+.search_button {
+	border-radius: 30px;
+	padding: 14px 36px;
+	font-size: 12px;
+	font-weight: 500;
+	letter-spacing: 1px;
+	background-color: #20b883;
+	color: #fff;
+	border: none;
+	outline: none;
+	cursor: pointer;
+}
