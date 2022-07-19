@@ -32,13 +32,6 @@
 						<p class="logo-text">Kafene</p>
 					</a>
 				</div>
-				<div class="column">
-					<div class="row space-between v-middle">
-						<a class="nav-link" aria-current="page" href="#">Orders</a>
-						<a class="nav-link" href="#">Products</a>
-						<a class="nav-link" href="#">Users</a>
-					</div>
-				</div>
 			</div>
 		</nav>
 
@@ -46,7 +39,7 @@
 		<div class="container space-around">
 			<div id="login_box" class="column">
 				<h1>Sign In</h1>
-				<form id="login_form" class="column">
+				<form id="login_form" class="column" method="POST" action="order.html">
 					<input class="input-text-field" id="username" type="text" name="username" placeholder="Enter Username">
 					<input class="input-text-field" id="password" type="password" name="password" placeholder="Enter Password">
 					<button id="login_button" type="submit">Login</button>
@@ -56,5 +49,8 @@
 
 		<!-- JS & JQuery -->
 		<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+		<!-- custom JS & Jquery -->
+		<script type="text/javascript" src="js/login.js"></script>
 	</body>
 </html>
