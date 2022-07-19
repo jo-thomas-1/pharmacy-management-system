@@ -55,7 +55,7 @@
 				<div class="row">
 					<div class="column filter_section">
 						<h3 class="m-0">Filters</h3>
-						<p class="data_count">Count: <span id="order_count">11</span></p>
+						<p class="data_count">Count: <span id="order_count"></span></p>
 						<label class="filter-item">
 							<input type="checkbox" name="new" value="new" checked>New
 						</label>
@@ -80,21 +80,8 @@
 									<th>Status</th>
 								</tr>
 							</thead>
-							<tbody>
-								<tr class="delivered">
-									<td class="silent-text">714-69-5617</td>
-									<td>Sally Whebell</td>
-									<td>07 Aug, 2020<br><span class="silent-text">2:29 AM</span></td>
-									<td class="silent-text">$634.2</td>
-									<td>Delivered</td>
-								</tr>
-								<tr>
-									<td class="silent-text">714-69-5617</td>
-									<td>Sally Whebell</td>
-									<td>07 Aug, 2020<br><span class="silent-text">2:29 AM</span></td>
-									<td class="silent-text">$634.2</td>
-									<td>Delivered</td>
-								</tr>
+							<tbody id="order_table_body">
+								<!-- order table rows will be added here -->
 							</tbody>
 						</table>
 					</div>
@@ -104,5 +91,8 @@
 
 		<!-- JS & JQuery -->
 		<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+		<!-- custom JS & Jquery -->
+		<script type="text/javascript" src="js/order.js"></script>
 	</body>
 </html>
