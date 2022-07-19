@@ -64,15 +64,15 @@ a {
 }
 
 #navbar_brand_main {
-	padding-top: 0.8em;
-	padding-bottom: 0.8em;
+	padding-top: 1em;
+	padding-bottom: 1em;
 }
 
 .nav-link {
 	margin-right: 2em;
 	font-weight: 500;
-	padding-top: 0.8em;
-	padding-bottom: 0.8em;
+	padding-top: 1em;
+	padding-bottom: 1em;
 }
 
 .nav-link.active {

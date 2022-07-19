@@ -21,6 +21,6 @@ Important Instructions:
 
 <hr>
 
-View in Codepen: https://codepen.io/jothomas/full/Barpxdr
+Live Site: https://brash-sly-fiber.glitch.me
 
 GitHub Repository: https://github.com/jothomas1996/pharmacy-management-system.git
