@@ -5,21 +5,59 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Kafene - Users</title>
 
-		<!-- Bootstrap 5.2.0 CSS -->
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-		<!-- custom CSS -->
-		<link rel="stylesheet" type="text/css" href="main.css">
+		<!-- Poppins Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+
+		<!-- custom -->
+		<link rel="stylesheet" type="text/css" href="css/main.css">
 	</head>
 	<body>
-		<p>Users</p>
+		<!--
+			Functionality:
+				- On page load send a call to the backend to fetch all the users.
+				- The admin should be able to search users based on the first and last name.
+				- Search should work only when the characters entered are 2 or more.
+				- If the admin tries to search a user by typing less than 2 characters then show an alert which says, "Please enter at least 2 characters".
+				- On a successful search API call, the table should show only the search results.
+				- On the Reset button click, reset the search field and show all the users.
 
-		<!-- JQuery -->
+			API Details:
+				User List Endpoint: https://5fc1a1c9cb4d020016fe6b07.mockapi.io/api/v1/users
+				Request Type: GET
+
+				User Search Endpoint: https://5fc1a1c9cb4d020016fe6b07.mockapi.io/api/v1/users?fullName=John
+				Request Type: GET
+		-->
+
+		<!-- navigation bar -->
+		<nav id="nav_bar" class="row">
+			<div class="container">
+				<div id="navbar_brand" class="column">
+					<a class="row navbar-brand" href="#">
+						<img class="logo-image v-middle" src="logo.png" alt="logo">
+						<p class="logo-text">Kafene</p>
+					</a>
+				</div>
+				<div class="column">
+					<div class="row space-between v-middle">
+						<a class="nav-link" aria-current="page" href="order.html">Orders</a>
+						<a class="nav-link" href="product.html">Products</a>
+						<a class="nav-link active" href="user.html">Users</a>
+					</div>
+				</div>
+			</div>
+		</nav>
+
+		<!-- body content -->
+		<div class="container space-around">
+			<div id="login_box" class="column">
+				<h1>Users</h1>
+			</div>
+		</div>
+
+		<!-- JS & JQuery -->
 		<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-
-		<!-- Bootstrap 5.2.0 JavaScript Bundle with Popper -->
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-
-		<!-- custom js files -->
-		<script type="text/javascript" src="main.js"></script>
 	</body>
 </html>
