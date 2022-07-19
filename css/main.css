@@ -36,6 +36,10 @@ body {
 	margin-bottom: auto;
 }
 
+.m-0 {
+	margin: 0px;
+}
+
 a {
 	text-decoration: none;
 	color: rgba(0,0,0,.8);
@@ -43,22 +47,33 @@ a {
 
 #nav_bar {
 	box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-	padding-top: 0.8em;
-	padding-bottom: 0.8em;
 	background-color: #ffffff;
+	margin-bottom: 4vh;
+}
+
+.nav_bar_container {
+	width: 90%;
 }
 
 #navbar_brand {
 	margin-right: 4em;
 }
 
+#navbar_brand_main {
+	padding-top: 0.8em;
+	padding-bottom: 0.8em;
+}
+
 .nav-link {
 	margin-right: 2em;
 	font-weight: 500;
+	padding-top: 0.8em;
+	padding-bottom: 0.8em;
 }
 
 .nav-link.active {
-	color: #000000;
+	color: #20b883;
+    border-bottom: 3px solid #20b883;
 }
 
 .logo-image {
@@ -75,6 +90,46 @@ a {
 	color: rgba(0,0,0,.8);
 }
 
-h1 {
-	font-weight: 500;
+/* -------------- */
+
+.full-width {
+	width: 100%;
+}
+
+.filter_section {
+	width: 16%;
+}
+
+.filter-item {
+	margin: 6px 0;
+	cursor: pointer;
+}
+
+input[type="checkbox"] {
+	margin-right: 12px;
+}
+
+.data_section {
+	width: 84%;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	text-align: left;
+	vertical-align: middle;
+}
+
+td, th {
+	padding: 12px 24px;
+	font-size: 14px;
+}
+
+tbody td {
+	background-color: #fff;
+	border-bottom: 4px solid #f6f7fb;
+}
+
+.silent-text {
+	color: #8c8c8c;
 }

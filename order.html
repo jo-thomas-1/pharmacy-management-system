@@ -26,8 +26,8 @@
 
 		<!-- navigation bar -->
 		<nav id="nav_bar" class="row">
-			<div class="container">
-				<div id="navbar_brand" class="column">
+			<div class="container nav_bar_container">
+				<div id="navbar_brand" class="column v-middle">
 					<a class="row navbar-brand" href="#">
 						<img class="logo-image v-middle" src="logo.png" alt="logo">
 						<p class="logo-text">Kafene</p>
@@ -44,9 +44,56 @@
 		</nav>
 
 		<!-- body content -->
-		<div class="container space-around">
-			<div id="login_box" class="column">
+		<div class="container">
+			<div class="column full-width">
 				<h1>Orders</h1>
+				<div class="row">
+					<div class="column filter_section">
+						<h3 class="m-0">Filters</h3>
+						<p class="data_count">Count: <span id="order_count">11</span></p>
+						<label class="filter-item">
+							<input type="checkbox" name="orders-new" checked>New
+						</label>
+						<label class="filter-item">
+							<input type="checkbox" name="orders-new" checked>Packed
+						</label>
+						<label class="filter-item">
+							<input type="checkbox" name="orders-new" checked>InTransit
+						</label>
+						<label class="filter-item">
+							<input type="checkbox" name="orders-new" checked>Delivered
+						</label>
+					</div>
+					<div class="column data_section">
+						<table>
+							<thead>
+								<tr>
+									<th>ID</th>
+									<th>Customer</th>
+									<th>Date</th>
+									<th>Amount</th>
+									<th>Status</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="delivered">
+									<td class="silent-text">714-69-5617</td>
+									<td>Sally Whebell</td>
+									<td>07 Aug, 2020<br><span class="silent-text">2:29 AM</span></td>
+									<td class="silent-text">$634.2</td>
+									<td>Delivered</td>
+								</tr>
+								<tr>
+									<td class="silent-text">714-69-5617</td>
+									<td>Sally Whebell</td>
+									<td>07 Aug, 2020<br><span class="silent-text">2:29 AM</span></td>
+									<td class="silent-text">$634.2</td>
+									<td>Delivered</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
 			</div>
 		</div>
 
