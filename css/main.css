@@ -26,6 +26,10 @@ body {
 	justify-content: space-between;
 }
 
+.space-around {
+	justify-content: space-around;
+}
+
 .v-middle {
 	vertical-align: middle;
 	margin-top: auto;
@@ -69,4 +73,8 @@ a {
 	font-weight: 500;
 	margin: 0;
 	color: rgba(0,0,0,.8);
+}
+
+h1 {
+	font-weight: 500;
 }

@@ -11,7 +11,8 @@
 		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
 
 		<!-- custom -->
-		<link rel="stylesheet" type="text/css" href="main.css">
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<link rel="stylesheet" type="text/css" href="css/login.css">
 	</head>
 	<body>
 		<!--
@@ -42,6 +43,16 @@
 		</nav>
 
 		<!-- body content -->
+		<div class="container space-around">
+			<div id="login_box" class="column">
+				<h1>Sign In</h1>
+				<form id="login_form" class="column">
+					<input class="input-text-field" id="username" type="text" name="username" placeholder="Enter Username">
+					<input class="input-text-field" id="password" type="password" name="password" placeholder="Enter Password">
+					<button id="login_button" type="submit">Login</button>
+				</form>
+			</div>
+		</div>
 
 		<!-- JS & JQuery -->
 		<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
