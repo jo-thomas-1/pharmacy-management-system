@@ -19,6 +19,7 @@ function check_login(event)
 	if($("#username").val() == $("#password").val())
 	{
 		alert("Login Successful");
+		localStorage.setItem("logged_in", "true");
 		$(location).attr("href", "admin.html");
 	}
 	else
@@ -29,3 +30,10 @@ function check_login(event)
 
 // call function on form submit
 $("#login_form").submit(check_login);
+
+// check if login is already done
+if(localStorage.getItem("logged_in") == "true")
+{
+	console.log("user already logged in");
+	$(location).attr("href", "admin.html");
+}
