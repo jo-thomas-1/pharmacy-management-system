@@ -19,7 +19,7 @@ function check_login(event)
 	if($("#username").val() == $("#password").val())
 	{
 		alert("Login Successful");
-		$(location).attr("href", "order.html");
+		$(location).attr("href", "admin.html");
 	}
 	else
 	{
