@@ -62,11 +62,63 @@ const site_structure = {
 };
 
 var page = "order";
+var data_set;
+
+// generate and add rows to table
+function generate_data_row(index, value)
+{
+	temp_row = "";
+
+	if(page == "order")
+	{
+		temp_row = $('<tr>' +
+			'<td class="silent-text">' + value["id"] + '</td>' +
+			'<td>' + value["customerName"] + '</td>' +
+			'<td class="text-no-wrap">' + value["orderDate"] + '<br><span class="silent-text">' + value["orderTime"] + '</span></td>' +
+			'<td class="silent-text">' + value["amount"] + '</td>' +
+			'<td>' + value["orderStatus"] + '</td>' +
+		'</tr>');
+
+		temp_row.addClass(value["orderStatus"].toLowerCase());
+	}
+	else if(page == "product")
+	{
+		temp_row = $('<tr id="' + value["id"] + '" class="' + '">' +
+			'<td class="silent-text">' + value["id"] + '</td>' +
+			'<td>' + value["medicineName"] + '</td>' +
+			'<td class="silent-text">' + value["medicineBrand"] + '</td>' +
+			'<td class="text-no-wrap">' + value["expiryDate"] + '</td>' +
+			'<td class="silent-text">' + value["unitPrice"] + '</td>' +
+			'<td class="silent-text">' + value["stock"] + '</td>' +
+		'</tr>');
+
+		if(new Date(value["expiryDate"]) < new Date()) temp_row.addClass("expired");
+		if(value["stock"] < 100) temp_row.addClass("low_stock");
+	}
+	else if(page == "user")
+	{
+		temp_row = $('<tr id="' + value["id"] + '">' +
+			'<td class="silent-text">' + value["id"] + '</td>' +
+			'<td>' +
+				'<img src="' + value["profilePic"] + '" alt="Profile Pic">' +
+			'</td>' +
+			'<td class="silent-text">' + value["fullName"] + '</td>' +
+			'<td class="text-no-wrap">' + value["dob"] + '</td>' +
+			'<td class="silent-text">' + value["gender"] + '</td>' +
+			'<td class="silent-text">' + value["currentCity"] + ', ' + value["currentCountry"] + '</td>' +
+		'</tr>');
+	}
+
+	$("#data_table_body").append(temp_row);
+}
 
 function data_get_success(data)
 {
 	console.log("data obtained succefully");
 	console.log(data);
+
+	// backup data
+	data_set = data;
 
 	let temp_row = "";
 
@@ -82,8 +134,8 @@ function data_get_success(data)
 		$("#body_box").html('<h1>Users</h1>' +
 				'<div class="row">' +
 					'<form id="search_box_form" class="row">' +
-						'<input class="search_box" type="search" placeholder="Search by Name">' +
-						'<input class="search_button" type="reset" value="Reset">' +
+						'<input class="search_box" type="search" placeholder="Search by Name" onkeyup="search_user(this.value);" onsearch="search_user(this.value);">' +
+						'<input class="search_button" type="reset" value="Reset" onclick="search_user(\'\');">' +
 					'</form>' +
 				'</div>' +
 				'<div class="row">' +
@@ -140,59 +192,13 @@ function data_get_success(data)
 	temp_row = temp_row + "</tr>";
 	$("#data_table_head").html(temp_row);
 
-	// generate and add rows to table
-	function generate_data_row(index, value)
-	{
-		temp_row = "";
-
-		if(page == "order")
-		{
-			temp_row = $('<tr>' +
-				'<td class="silent-text">' + value["id"] + '</td>' +
-				'<td>' + value["customerName"] + '</td>' +
-				'<td class="text-no-wrap">' + value["orderDate"] + '<br><span class="silent-text">' + value["orderTime"] + '</span></td>' +
-				'<td class="silent-text">' + value["amount"] + '</td>' +
-				'<td>' + value["orderStatus"] + '</td>' +
-			'</tr>');
-
-			temp_row.addClass(value["orderStatus"].toLowerCase());
-		}
-		else if(page == "product")
-		{
-			temp_row = $('<tr id="' + value["id"] + '" class="' + '">' +
-				'<td class="silent-text">' + value["id"] + '</td>' +
-				'<td>' + value["medicineName"] + '</td>' +
-				'<td class="silent-text">' + value["medicineBrand"] + '</td>' +
-				'<td class="text-no-wrap">' + value["expiryDate"] + '</td>' +
-				'<td class="silent-text">' + value["unitPrice"] + '</td>' +
-				'<td class="silent-text">' + value["stock"] + '</td>' +
-			'</tr>');
-
-			if(new Date(value["expiryDate"]) < new Date()) temp_row.addClass("expired");
-			if(value["stock"] < 100) temp_row.addClass("low_stock");
-		}
-		else if(page == "user")
-		{
-			temp_row = $('<tr id="' + value["id"] + '">' +
-				'<td class="silent-text">' + value["id"] + '</td>' +
-				'<td>' +
-					'<img src="' + value["profilePic"] + '" alt="Profile Pic">' +
-				'</td>' +
-				'<td class="silent-text">' + value["fullName"] + '</td>' +
-				'<td class="text-no-wrap">' + value["dob"] + '</td>' +
-				'<td class="silent-text">' + value["gender"] + '</td>' +
-				'<td class="silent-text">' + value["currentCity"] + ', ' + value["currentCountry"] + '</td>' +
-			'</tr>');
-		}
-
-		$("#data_table_body").append(temp_row);
-	}
-
 	$("#data_table_body").html("");
 	$.each(data, generate_data_row);
 
 	// update data count to page
 	$("#data_count").html(data.length);
+
+	console.log("page updated successfully");
 }
 
 function data_get_fail(error)
