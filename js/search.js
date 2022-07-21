@@ -1,12 +1,16 @@
 // function to search user list
 function search_user(search_text)
 {
+	search_text = search_text.trim();
 	console.log(search_text);
 
-	$("#data_table_body").html("");
-	if(search_text.trim() == "") data_get_success(data_set);
-	else
+	if(search_text == "") data_get_success(data_set);
+	else if(search_text.length > 2)
 	{
+		// empty table
+		$("#data_table_body").html("");
+
+		// search and display matching data
 		for(let i = 0; i < data_set.length; i++)
 		{
 			if(data_set[i]["fullName"].toLowerCase().includes(search_text.toLowerCase()))
