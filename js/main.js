@@ -126,7 +126,7 @@ function data_get_success(data)
 		$("#filter_items").html("");
 		$.each(site_structure[page]["filter"], function (index, value) {
 			temp_row = '<label class="filter-item">' +
-				'<input type="checkbox" name="' + value.toLowerCase() + '" value="' + value.toLowerCase().replace(/ /g, "_") + '" checked>' + value +
+				'<input type="checkbox" name="' + value.toLowerCase() + '" value="' + value.toLowerCase().replace(/ /g, "_") + '" onclick="flip_display(this);" checked>' + value +
 			'</label>';
 			$("#filter_items").append(temp_row);
 		});
