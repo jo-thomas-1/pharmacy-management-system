@@ -126,7 +126,7 @@ function data_get_success(data)
 		$("#filter_items").html("");
 		$.each(site_structure[page]["filter"], function (index, value) {
 			temp_row = '<label class="filter-item">' +
-				'<input type="checkbox" name="' + value.toLowerCase() + '" value="' + value.toLowerCase() + '" checked>' + value +
+				'<input type="checkbox" name="' + value.toLowerCase() + '" value="' + value.toLowerCase().replace(/ /g, "_") + '" checked>' + value +
 			'</label>';
 			$("#filter_items").append(temp_row);
 		});
@@ -147,17 +147,19 @@ function data_get_success(data)
 
 		if(page == "order")
 		{
-			temp_row = $('<tr class="' + value["orderStatus"].toLowerCase() + '"></tr>' +
+			temp_row = $('<tr>' +
 				'<td class="silent-text">' + value["id"] + '</td>' +
 				'<td>' + value["customerName"] + '</td>' +
 				'<td class="text-no-wrap">' + value["orderDate"] + '<br><span class="silent-text">' + value["orderTime"] + '</span></td>' +
 				'<td class="silent-text">' + value["amount"] + '</td>' +
 				'<td>' + value["orderStatus"] + '</td>' +
 			'</tr>');
+
+			temp_row.addClass(value["orderStatus"].toLowerCase());
 		}
 		else if(page == "product")
 		{
-			temp_row = $('<tr id="' + value["id"] + '">' +
+			temp_row = $('<tr id="' + value["id"] + '" class="' + '">' +
 				'<td class="silent-text">' + value["id"] + '</td>' +
 				'<td>' + value["medicineName"] + '</td>' +
 				'<td class="silent-text">' + value["medicineBrand"] + '</td>' +
@@ -165,6 +167,9 @@ function data_get_success(data)
 				'<td class="silent-text">' + value["unitPrice"] + '</td>' +
 				'<td class="silent-text">' + value["stock"] + '</td>' +
 			'</tr>');
+
+			if(new Date(value["expiryDate"]) < new Date()) temp_row.addClass("expired");
+			if(value["stock"] < 100) temp_row.addClass("low_stock");
 		}
 		else if(page == "user")
 		{
