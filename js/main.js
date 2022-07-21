@@ -100,7 +100,7 @@ function data_get_success(data)
 	else
 	{
 		// update body box html
-		$("#body_box").html('<h1 id="section_heading">Page</h1>' +
+		$("#body_box").html('<h1 id="section_heading">' + page + '</h1>' +
 				'<div class="row">' +
 					'<div class="column filter_section">' +
 						'<h3 class="m-0">Filters</h3>' +

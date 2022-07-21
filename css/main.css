@@ -101,6 +101,10 @@ a {
 	width: 100%;
 }
 
+#section_heading {
+	text-transform: capitalize;
+}
+
 .filter_section {
 	width: 16%;
 }
