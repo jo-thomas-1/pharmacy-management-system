@@ -1,5 +1,7 @@
 # Pharmacy Management System - Certification Project 1
 
+[Click here](https://youtu.be/Hn337KAOllA) to watch a short intoduction video about this project.
+
 Web Developer Fundamentals - Assessment - Test 2 - Coding round
 
 Requirements File: https://drive.google.com/file/d/1l4xwiM8zEE7J8Qf_Ffu0tyo6gx3eB4Vc/view
