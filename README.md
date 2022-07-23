@@ -21,6 +21,8 @@ Important Instructions:
 
 <hr>
 
+Intro Video: https://youtu.be/Hn337KAOllA
+
 Live Site: https://brash-sly-fiber.glitch.me
 
 GitHub Repository: https://github.com/jothomas1996/pharmacy-management-system.git
